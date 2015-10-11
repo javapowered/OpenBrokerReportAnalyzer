@@ -171,6 +171,7 @@ int main(int argc, char* argv[])
 							// �� ���� �������������
 							// comment="���, ������� �������
 							if (attrVal.length() > 0) {
+								std::cerr << "ok, skip item with comment " << attrVal << std::endl;
 								skipItem = true;
 								break;
 							}
