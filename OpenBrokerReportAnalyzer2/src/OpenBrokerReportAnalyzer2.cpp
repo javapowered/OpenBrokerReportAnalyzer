@@ -52,7 +52,7 @@ boost::property_tree::ptree pt_forts;
 // "from" - including
 // "to"   - excluding
 // so if from == to - nothing
-void finishSecurityStats(std::string& security_name, date& from, date& to)
+void finishSecurityStats(std::string& security_name, const date& from, const date& to)
 {
 	day_iterator dayIt(from);
 	if (dayIt > to) {
@@ -99,11 +99,13 @@ int main(int argc, char* argv[])
 
 	setlocale(LC_ALL, "Russian");
 
-	const int nGroups = 3;
+	const int nGroups = 8;
 	const int groupSize = 3;
 	std::string groups[nGroups][groupSize] =
 	{
-		{"LKOH-6.14",  "LKOH-9.14", "LKOH-12.14"}, {"RTS-6.14",   "RTS-9.14", "RTS-12.14"}, {"SBRF-6.14",  "SBRF-9.14", "SBRF-12.14"}
+		{"GAZR-12.15",  "GAZR-3.16", "GAZP"}, {"SBRF-12.15",   "SBRF-3.16", "SBER"}, {"LKOH-12.15",  "LKOH-3.16", "LKOH"},
+		{"VTBR-12.15",  "VTBR-3.16", "VTBR"}, {"GMKR-12.15",   "GMKR-3.16", "GMKN"}, {"ROSN-12.15",  "ROSN-3.16", "ROSN"},
+		{"SBPR-12.15",  "SBPR-3.16", "SBERP"}, {"Si-12.15",   "Si-3.16", "Si-6.16"}
 	};
 
 	boost::property_tree::xml_parser::read_xml(argv[1], pt_spot);
